@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+
+    <title>Product List</title>
+</head>
+<body>
+
+    <h1 th:text="${products.size()}"></h1>
+    <h1 th:if="${products[0].count} &gt; 1" th:text="'this product greather than 1'"></h1>
+    <h1 th:if="${products[0].count} == 5">this product equal 5</h1>
+    <h1 th:text="${products.size()}"></h1>
+    <ul>
+        <li th:each="product : ${products}">
+            <a href="#" th:text="${product.name}">Product 1</a>
+        </li>
+    </ul>
+</body>
+</html>

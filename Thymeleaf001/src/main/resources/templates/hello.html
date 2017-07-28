@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Hello World Thymeleaf</title>
+</head>
+<body>
+    <h1>Hello World Thymeleaf</h1>
+    <p th:text="'My name is ' + ${name}"> </p>
+    <img th:src="@{images/Picture1.png}" />
+    <ul>
+        <li th:text="${address.city}"></li>
+        <li th:text="${address.no}"></li>
+    </ul>
+
+    <ul>
+        <li th:each="link: ${links}">
+            <a th:href="${link.url}" th:text="${link.url}"></a>
+        </li>
+    </ul>
+
+    <ul>
+        <li th:text="${user.username}"></li>
+        <li th:if="${user.role.name == true}" th:text="admin">stand user</li>
+    </ul>
+
+    <ul>
+        <li>
+            <a th:href="@{/products}" th:text="'list product'"></a>
+        </li>
+    </ul>
+</body>
+</html>
